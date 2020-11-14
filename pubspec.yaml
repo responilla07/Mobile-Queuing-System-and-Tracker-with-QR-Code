@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cached_network_image: 2.0.0-rc
+  path_provider:
+  path:
   cupertino_icons: ^0.1.3
 
 dev_dependencies:
