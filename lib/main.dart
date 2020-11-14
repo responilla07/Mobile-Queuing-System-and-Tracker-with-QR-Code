@@ -16,11 +16,12 @@ class MyApp extends StatelessWidget {
       home: RootPage(),
       theme: ThemeData(
         primaryColor: primaryColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity, 
-        textTheme: TextTheme( //TODO Create a text theme here
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          //TODO Create a text theme here
           bodyText1: TextStyle(
-            fontSize: 20.0, 
-            fontFamily: 'Inter', 
+            fontSize: 20.0,
+            fontFamily: 'Lato',
             fontWeight: FontWeight.bold,
           ),
         ),

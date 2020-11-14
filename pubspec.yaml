@@ -19,3 +19,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family:  CustomIcons
+      fonts:
+        - asset: assets/icons/customIcons.ttf
+  
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato-Bold.ttf
+         
