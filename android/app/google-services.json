@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "492023630079",
+    "firebase_url": "https://queuingsystem-b3ef2.firebaseio.com",
+    "project_id": "queuingsystem-b3ef2",
+    "storage_bucket": "queuingsystem-b3ef2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492023630079:android:b5d1b835fa4dfea506e4ca",
+        "android_client_info": {
+          "package_name": "com.example.queuing_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492023630079-3km8l85not09frvrcb6q2gvj9j8bg5o1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDenty8Fvocg_hHp5jIj4xAqP9JMT_AKfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492023630079-3km8l85not09frvrcb6q2gvj9j8bg5o1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

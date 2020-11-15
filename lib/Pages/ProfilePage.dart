@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queuing_system/Widgets/CustomAppBar.dart';
+
 
 class ProfilePage extends StatefulWidget {
   @override
