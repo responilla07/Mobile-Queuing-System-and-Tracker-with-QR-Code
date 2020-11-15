@@ -10,6 +10,6 @@ ValueNotifier<String> pageTitle = ValueNotifier("Home");
 List<Widget> pagesForUser = [HistoryPage(), QRCodePage(), ProfilePage()];
 List<Widget> tabsForUser = [
   Tab(child: Icon(CustomIcons.history2)),
-  Tab(child: Icon(Icons.qr_code)),
+  Tab(child: Icon(CustomIcons.qr)),
   Tab(child: Icon(CustomIcons.profile)),
 ];

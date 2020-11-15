@@ -26,10 +26,11 @@ class CustomIcons {
   static const IconData info = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData showpass_icon_ = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData chat_sample_ = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData qr = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData qr = IconData(0xf3d2, fontFamily: 'MaterialIcons');
   static const IconData email_sample_ = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData logout = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData search_sample_ = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData edit_profile = IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData history2 = IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+
 }
