@@ -15,11 +15,24 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       home: RootPage(),
       theme: ThemeData(
+        
         primaryColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
           //TODO Create a text theme here
           bodyText1: TextStyle(
+            fontSize: 14.0,
+            fontFamily: 'Lato',
+            fontWeight: FontWeight.bold,
+            color: secondaryColor
+          ),
+          bodyText2: TextStyle(
+            fontSize: 16.0,
+            fontFamily: 'Lato',
+            fontWeight: FontWeight.bold,
+            color: primaryColor
+          ),
+          button: TextStyle(
             fontSize: 20.0,
             fontFamily: 'Lato',
             fontWeight: FontWeight.bold,
