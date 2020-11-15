@@ -18,7 +18,7 @@ dependencies:
   firebase_core : ^0.5.0
   toast: ^0.1.5
   firebase_storage: ^5.0.1
-  url_launcher: ^5.7.10
+  url_launcher:
   intl: ^0.16.1
   image_picker: ^0.6.7+14
   path_provider: ^1.6.24
