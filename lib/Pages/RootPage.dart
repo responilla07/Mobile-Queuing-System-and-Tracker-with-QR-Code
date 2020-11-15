@@ -9,7 +9,8 @@ class RootPage extends StatefulWidget {
   _RootPageState createState() => _RootPageState();
 }
 
-class _RootPageState extends State<RootPage> with SingleTickerProviderStateMixin{
+class _RootPageState extends State<RootPage>
+    with SingleTickerProviderStateMixin {
   RootPageClass root = RootPageClass();
 
   @override
@@ -31,11 +32,12 @@ class _RootPageState extends State<RootPage> with SingleTickerProviderStateMixin
       onWillPop: () async => false,
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
-          child: CustomAppBar(root: root)
-        ),
+            preferredSize: Size.fromHeight(40.0),
+            child: CustomAppBar(root: root)),
         // key: scaffoldKey,
-        bottomNavigationBar: BottomNavigation(tabController: root.tabController),
+        bottomNavigationBar: BottomNavigation(
+          tabController: root.tabController,
+        ),
         body: SafeArea(
           child: Container(
             color: Colors.white,
