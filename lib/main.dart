@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Variables/color.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'Pages/RootPage.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    initializeFirebase();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,4 +51,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
+}
+
+void initializeFirebase() async {
+  await Firebase.initializeApp();
 }
