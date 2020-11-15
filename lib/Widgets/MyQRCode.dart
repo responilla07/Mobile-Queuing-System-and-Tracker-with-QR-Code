@@ -16,7 +16,7 @@ class MyQRCode extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(5),
         width: PhoneSize(context).width,
-        height: (PhoneSize(context).height / 2.5) + 56,
+        height: (PhoneSize(context).height / 2.5) + 54,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,7 +24,7 @@ class MyQRCode extends StatelessWidget {
               "My QR Code",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 26
+                fontSize: 24
               ),
             ),
             SizedBox(height: 10,),
@@ -34,7 +34,7 @@ class MyQRCode extends StatelessWidget {
               ),
               elevation: 4.0,
               child: Container(
-                width: 240, height: 240,
+                width: (PhoneSize(context).width / 1.5), height: (PhoneSize(context).height / 2.5) - 16,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: CachedNetworkImage(

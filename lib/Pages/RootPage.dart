@@ -1,60 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:queuing_system/Class/RootPage.dart';
+import 'package:queuing_system/Pages/MainPage.dart';
+import 'package:queuing_system/SubPages/Login.dart';
+import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/Variables/global.dart';
-import 'package:queuing_system/Widgets/BottomNavigation.dart';
-import 'package:queuing_system/Widgets/CustomAppBar.dart';
+import 'package:queuing_system/transitions/slide_route.dart';
 
 class RootPage extends StatefulWidget {
   @override
   _RootPageState createState() => _RootPageState();
 }
 
-class _RootPageState extends State<RootPage>
-    with SingleTickerProviderStateMixin {
-  RootPageClass root = RootPageClass();
+class _RootPageState extends State<RootPage> {
+
+  navigateToDesignatedPage() async {
+    await Future.delayed(const Duration(milliseconds: 5000), null);
+    await Navigator.pushReplacement(context, SlideLeftRoute(page: LoginPage()));
+  }
 
   @override
   void initState() {
-    root.tabController = TabController(length: 3, vsync: this, initialIndex: 1);
+    navigateToDesignatedPage();
     super.initState();
   }
 
   @override
   void dispose() {
-    root.isDispose = true;
-    pageTitle.removeListener(() {});
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size.fromHeight(40.0),
-            child: CustomAppBar(root: root)),
-        // key: scaffoldKey,
-        bottomNavigationBar: BottomNavigation(
-          tabController: root.tabController,
-        ),
-        body: SafeArea(
-          child: Container(
-            color: Colors.white,
-            height: double.infinity,
-            width: double.infinity,
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: TabBarView(
-                    physics: NeverScrollableScrollPhysics(),
-                    children: pagesForUser,
-                    controller: root.tabController,
+    return Scaffold(
+      body: Container(
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 75.0, right: 75.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Image.asset(
+                        'assets/logo.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: SafeArea(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(vertical: 32.0),
+                  child: Column(
+                    children: <Widget>[ //Comment nalang para may loader
+                      CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(primaryColor))
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

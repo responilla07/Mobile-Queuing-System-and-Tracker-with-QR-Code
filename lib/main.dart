@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
             color: secondaryColor
           ),
           bodyText2: TextStyle(
-            fontSize: 16.0,
+            fontSize: 14.0,
             fontFamily: 'Lato',
             fontWeight: FontWeight.bold,
             color: primaryColor
