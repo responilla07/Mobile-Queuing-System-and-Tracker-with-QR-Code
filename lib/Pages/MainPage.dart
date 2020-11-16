@@ -45,7 +45,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
         ),
         body: SafeArea(
           child: Container(
-            color: Colors.white,
+            decoration: backgroundColor(),
             height: double.infinity,
             width: double.infinity,
             child: Column(
