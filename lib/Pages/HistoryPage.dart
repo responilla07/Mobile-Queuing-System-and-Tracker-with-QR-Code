@@ -13,6 +13,7 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,3 +36,4 @@ class _HistoryPageState extends State<HistoryPage> {
     );
   }
 }
+

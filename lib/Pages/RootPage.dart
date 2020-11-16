@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:queuing_system/Methods/Style.dart';
 import 'package:queuing_system/Pages/MainPage.dart';
 import 'package:queuing_system/SubPages/Login.dart';
 import 'package:queuing_system/Variables/color.dart';
@@ -32,6 +33,7 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: backgroundColor(),
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -46,7 +48,7 @@ class _RootPageState extends State<RootPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Image.asset(
-                        'assets/logo.png',
+                        'assets/logo1.png',
                         fit: BoxFit.cover,
                       ),
                     ],
