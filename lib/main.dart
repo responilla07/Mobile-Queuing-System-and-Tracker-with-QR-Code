@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
             color: primaryColor
           ),
           button: TextStyle(
-            fontSize: 20.0,
+            fontSize: 18.0,
             fontFamily: 'Lato',
             fontWeight: FontWeight.bold,
           ),
