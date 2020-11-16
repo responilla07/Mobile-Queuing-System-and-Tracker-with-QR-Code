@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Class/MainPageClass.dart';
-import 'package:queuing_system/Methods/Style.dart';
-import 'package:queuing_system/Presentation/custom_icons_icons.dart';
-import 'package:queuing_system/SubPages/Info.dart';
-import 'package:queuing_system/SubPages/Login.dart';
-import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/Variables/global.dart';
 import 'package:queuing_system/Widgets/BottomNavigation.dart';
 import 'package:queuing_system/Widgets/CustomAppBar.dart';
-import 'package:queuing_system/transitions/slide_route.dart';
 
 class MainPage extends StatefulWidget {
   @override
