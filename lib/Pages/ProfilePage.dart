@@ -51,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ProfileDetails(icon: CustomIcons.profile, text: 'John Doe Mayers',color: Colors.grey,),
     
                               SizedBox(height: 10),
-                              ProfileDetails( icon: Icons.calendar_today,text: '22 Years Old',color: Colors.grey,),
+                              ProfileDetails( icon: CustomIcons.contact,text: '22 Years Old',color: Colors.grey,),
                               
                               SizedBox(height: 10),
                               ProfileDetails(icon: Icons.contact_phone,text: '639-323-265-144', color: Colors.grey,),
