@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queuing_system/Presentation/custom_icons_icons.dart';
 import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/Variables/size.dart';
+import 'package:queuing_system/Widgets/ProfileDetails.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: SafeArea(
         child: ListView(
+          primary: false,
           padding: EdgeInsets.all(15.0),
           children: [
             Column(
@@ -31,11 +33,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Card(
                         elevation: 8.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(15.0),
                         ),
                         child: Container(
                           decoration: new BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
                             border: Border.all(
                               color: secondaryColor,
                               width: 5,
@@ -52,16 +54,14 @@ class _ProfilePageState extends State<ProfilePage> {
                               ProfileDetails( icon: Icons.calendar_today,text: '22 Years Old',color: Colors.grey,),
                               
                               SizedBox(height: 10),
-                              ProfileDetails(icon: Icons.contact_page,text: '639-323-265-144', color: Colors.grey,),
+                              ProfileDetails(icon: Icons.contact_phone,text: '639-323-265-144', color: Colors.grey,),
                         
                               SizedBox(height: 10),
                               ProfileDetails(
                                 icon: Icons.location_on,
-                                text:
-                                    '#61 Marinig Cabuya Laguna asd as dsa dasd qeqw asqwdasdsadas dqwe qwe asdqw eas dqwe ad wae dasd as asd asd as da sdas dsa dasdasd asd asdas dasd asd asd asd asdqwe wqe qwe wq',
+                                text: '#61 Marinig Cabuya Laguna asd as dsa dasd qeqw asqwdasdsadas dqwe qwe asdqw eas dqwe ad wae dasd as asd asd as da sdas dsa dasdasd asd asdas dasd asd asd asd asdqwe wqe qwe wq',
                                 color: Colors.grey,  
                               ),
-                              //paano pag madami yung letter sa address
                             ],
                           ),
                         ),
@@ -86,14 +86,14 @@ class _ProfilePageState extends State<ProfilePage> {
                             color: secondaryColor,
                             width: 5,
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.8),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
+                          // boxShadow: [
+                          //   BoxShadow(
+                          //     color: Colors.grey.withOpacity(0.8),
+                          //     spreadRadius: 2,
+                          //     blurRadius: 5,
+                          //     offset: Offset(0, 3),
+                          //   ),
+                          // ],
                           shape: BoxShape.circle,
                           image: new DecorationImage(
                             fit: BoxFit.fill,
@@ -109,33 +109,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ProfileDetails extends StatelessWidget {
-  const ProfileDetails(
-      {Key key, @required this.color, @required this.text, @required this.icon})
-      : super(key: key);
-
-  final Color color;
-  final text;
-  final IconData icon;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Icon(
-          icon,
-          color: secondaryColor,
-          size: 20,
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Expanded(child: Text('$text',style:TextStyle(color:Colors.black54),)),
-      ],
     );
   }
 }
