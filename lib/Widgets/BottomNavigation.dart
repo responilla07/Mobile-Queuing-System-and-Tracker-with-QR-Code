@@ -4,6 +4,7 @@ import 'package:queuing_system/Class/BottomNavigationClass.dart';
 import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/Variables/global.dart';
 
+
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({
     @required this.tabController,
@@ -20,13 +21,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.white,
+      color: primaryDarkColor,
       child: TabBar(
         onTap: (index) => navigation.onTapTabBar(index),
         controller: widget.tabController,
-        indicatorColor: Colors.transparent,
-        unselectedLabelColor: Color(0xff9d9d9d),
-        labelColor: primaryColor,
+        indicatorColor: Colors.white,
+        labelColor: Colors.white,
+        // unselectedLabelColor: Color(0xff9d9d9d),
+        unselectedLabelColor: Colors.white,
         tabs: tabsForUser
       )
     );
