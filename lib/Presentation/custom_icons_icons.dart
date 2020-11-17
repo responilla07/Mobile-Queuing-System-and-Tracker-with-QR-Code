@@ -25,6 +25,7 @@ class CustomIcons {
   static const IconData history = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData info = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData qr_1 = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData contact = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData showpass_icon_ = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData chat_sample_ = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData qr = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
