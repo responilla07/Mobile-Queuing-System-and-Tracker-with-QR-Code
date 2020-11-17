@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Class/MainPageClass.dart';
+import 'package:queuing_system/Methods/Style.dart';
 import 'package:queuing_system/Variables/global.dart';
 import 'package:queuing_system/Widgets/BottomNavigation.dart';
 import 'package:queuing_system/Widgets/CustomAppBar.dart';

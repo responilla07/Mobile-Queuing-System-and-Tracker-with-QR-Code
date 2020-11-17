@@ -37,7 +37,7 @@ class _CustomRaisedButtonState extends State<CustomRaisedButton> {
               ),
               borderRadius: BorderRadius.circular(30.0)),
           child: Container(
-            constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+            // constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
             alignment: Alignment.center,
             child: Text(
               widget.title,

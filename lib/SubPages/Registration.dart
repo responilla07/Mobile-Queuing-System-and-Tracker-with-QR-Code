@@ -42,15 +42,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         fontSize: 20
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 5,),
                     Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                         child: Container(
-                          height: 160,
+                          height: 180,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -85,15 +85,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         fontSize: 20
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 5,),
                     Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                         child: Container(
-                          height: 220,
+                          height: 240,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -107,7 +107,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       inputFormatter: [],
                                     ),
                                   ),
-                                  SizedBox(width: 10,),
+                                  SizedBox(width: 15,),
                                   Expanded(
                                     child: MyTextField(
                                       controller: null,
@@ -128,7 +128,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       inputFormatter: [],
                                     ),
                                   ),
-                                  SizedBox(width: 10,),
+                                  SizedBox(width: 15,),
                                   Container(
                                     width: 100,
                                     child: MyTextField(
@@ -150,7 +150,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       inputFormatter: [],
                                     ),
                                   ),
-                                  SizedBox(width: 10,),
+                                  SizedBox(width: 15,),
                                   Expanded(
                                     child: MyTextField(
                                       controller: null,
@@ -173,7 +173,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                     ////////////////////////////////////////////////////////////////////////
-                    SizedBox(height: 20,),
+                    SizedBox(height: 15,),
                     Center(
                       child: CustomRaisedButton(
                         title: "REGISTER",

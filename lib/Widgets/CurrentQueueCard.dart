@@ -64,8 +64,9 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
               ),
             ),
           ),
-          Text( " : ",
+          Text( " :   ",
             style: TextStyle(
+              color: Colors.black54,
               // fontSize: detail == 0 ? 18 : 14,
             ),
           ),

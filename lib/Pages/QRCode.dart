@@ -15,21 +15,21 @@ class _QRCodePageState extends State<QRCodePage> {
       backgroundColor: Colors.transparent,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
+          padding: const EdgeInsets.all(15.0),
+          child: Stack(
             children: <Widget>[
-              CurrentQueuCard(),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  width: PhoneSize(context).width - 40,
-                ),
-                elevation: 8.0,
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: CurrentQueuCard()
               ),
-              MyQRCode(),
+              Positioned(
+                bottom: 0,
+                top: 180,
+                left: 0,
+                right: 0,
+                child: MyQRCode()),
             ],
           ),
         ),
