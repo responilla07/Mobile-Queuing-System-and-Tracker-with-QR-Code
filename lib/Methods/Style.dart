@@ -11,9 +11,12 @@ BoxDecoration backgroundColor() {
   return BoxDecoration(
     gradient: LinearGradient(
       colors: [
-        secondaryColorLight.withOpacity(0.8),
-        primaryColorLight.withOpacity(0.8),
-        secondaryColorDark.withOpacity(0.8)
+        // secondaryColorLight.withOpacity(1),
+        // primaryColorLight.withOpacity(0.8),
+        // secondaryColorDark.withOpacity(0.8)
+        hexColor("e8f4ff"),
+        hexColor("d4ebff"),
+        hexColor("b5ddff"),
       ],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
