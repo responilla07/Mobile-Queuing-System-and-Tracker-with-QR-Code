@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:queuing_system/Variables/size.dart';
 
 class MyQRCode extends StatelessWidget {
   const MyQRCode({
