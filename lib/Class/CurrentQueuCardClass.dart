@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CurrentQueueCardClass {
+class QueueCardClass {
   List<String> queueDetails = [ "Status", "Location", "Date", ];
   List<String> queueDetailsSample = [ "In-queue", "SM San Juan City", "September 28, 2020", ];
-  List<Widget> currentQueueCardChildren = [];
+  List<Widget> queueCardChildren = [];
 
   List<Widget> queuePostion() {
     List<Widget> queuePostion = [];

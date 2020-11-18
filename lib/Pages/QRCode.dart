@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queuing_system/Variables/size.dart';
-import 'package:queuing_system/Widgets/CurrentQueueCard.dart';
+import 'package:queuing_system/Widgets/QueueCard.dart';
 import 'package:queuing_system/Widgets/MyQRCode.dart';
 
 class QRCodePage extends StatefulWidget {
@@ -22,7 +21,7 @@ class _QRCodePageState extends State<QRCodePage> {
                 top: 0,
                 left: 0,
                 right: 0,
-                child: CurrentQueuCard()
+                child: QueueCard(cardFor: "qr",)
               ),
               Positioned(
                 bottom: 0,

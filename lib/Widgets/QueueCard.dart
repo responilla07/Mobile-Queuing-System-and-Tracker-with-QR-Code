@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:queuing_system/Class/CurrentQueuCardClass.dart';
 import 'package:queuing_system/Variables/size.dart';
 
-class CurrentQueuCard extends StatefulWidget {
+class QueueCard extends StatefulWidget {
+  const QueueCard({
+    @required this.cardFor,
+  });
+
+  final String cardFor;
+
   @override
-  _CurrentQueuCardState createState() => _CurrentQueuCardState();
+  _QueueCardState createState() => _QueueCardState();
 }
 
-class _CurrentQueuCardState extends State<CurrentQueuCard> {
-  CurrentQueueCardClass currentQueue = CurrentQueueCardClass();
+class _QueueCardState extends State<QueueCard> {
+  QueueCardClass queueClass = QueueCardClass();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +37,9 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
   ////////////////////////////////////////////////////// METHODS //////////////////////////////////////////////////////
   
   currentQueuCardChildrens() { //Eto ay dapat matawag sa para macreate ang nilalaman ng cards
-    currentQueue.currentQueueCardChildren = [];
+    queueClass.queueCardChildren = [];
     
-    currentQueue.currentQueueCardChildren.add( Text( //Dito naman ilalagay yung number mo sa pila/etc.
+    queueClass.queueCardChildren.add( Text( //Dito naman ilalagay yung number mo sa pila/etc.
       "#" + "000000000001",
       style: TextStyle(
         fontWeight: FontWeight.bold,
@@ -41,22 +47,22 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
         letterSpacing: 8
       ),
     ),);
-    currentQueue.currentQueueCardChildren.add(SizedBox(height: 5,));
-    currentQueue.currentQueueCardChildren.add( Container( //Eto yung mag create ng Status bar lines kung pang ilan kana yung green is ikaw
+    queueClass.queueCardChildren.add(SizedBox(height: 5,));
+    queueClass.queueCardChildren.add( Container( //Eto yung mag create ng Status bar lines kung pang ilan kana yung green is ikaw
       height: 18,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: currentQueue.queuePostion(),
+        children: queueClass.queuePostion(),
       ),
     ),);
     
-    for (int detail = 0; detail < currentQueue.queueDetails.length; detail++) { //Eto naman yung mag create ng details ng current/latest queue mo
-      currentQueue.currentQueueCardChildren.add( Row(
+    for (int detail = 0; detail < queueClass.queueDetails.length; detail++) { //Eto naman yung mag create ng details ng current/latest queue mo
+      queueClass.queueCardChildren.add( Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Text(
-              currentQueue.queueDetails[detail],
+              queueClass.queueDetails[detail],
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black54,
@@ -73,7 +79,7 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
           Expanded(
             flex: 3,
             child: Text(
-              currentQueue.queueDetailsSample[detail],
+              queueClass.queueDetailsSample[detail],
               textAlign: TextAlign.start,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -84,8 +90,9 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
         ],
       ),);
     }
-    currentQueue.currentQueueCardChildren.add(SizedBox(height: 5,));
-    currentQueue.currentQueueCardChildren.add( Text( //Eto naman yung mag display ng note
+    queueClass.queueCardChildren.add(SizedBox(height: 5,));
+
+    queueClass.queueCardChildren.add( widget.cardFor == "history" ? Container() : Text( //Eto naman yung mag display ng note
       "Note* Na dapat nakabalik kana kapag ikaw ay nasa ika pang limang listahan na.",
       style: TextStyle(
         color: Colors.black45,
@@ -94,6 +101,6 @@ class _CurrentQueuCardState extends State<CurrentQueuCard> {
       ),
     ),);
 
-    return currentQueue.currentQueueCardChildren;
+    return queueClass.queueCardChildren;
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Methods/Style.dart';
-import 'package:queuing_system/Pages/MainPage.dart';
 import 'package:queuing_system/SubPages/Login.dart';
 import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/transitions/slide_route.dart';
