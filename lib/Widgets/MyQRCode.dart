@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class MyQRCode extends StatelessWidget {
   const MyQRCode({
-    Key key,
-  }) : super(key: key);
+    @required this.data
+  });
+  final String data;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +28,11 @@ class MyQRCode extends StatelessWidget {
             SizedBox(height: 10,),
             Expanded(child: Container()),
             Container(
-              // color: Colors.green,
               width: 240, height: 240,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
-                  // imageUrl: "",
-                  imageUrl: "https://briantjackett.files.wordpress.com/2019/08/qrcodesample.png?w=700", //Note* this is for sample only
+                  imageUrl: "https://qrcode-image-generator.herokuapp.com/generate?height=500&width=500&data=" + data,
                   fit: BoxFit.cover,
                   placeholder: (context, url) => Container(
                     width: 240, height: 240,
