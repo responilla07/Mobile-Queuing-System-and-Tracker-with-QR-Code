@@ -28,7 +28,8 @@ class _QRCodePageState extends State<QRCodePage> {
                 top: 180,
                 left: 0,
                 right: 0,
-                child: MyQRCode()),
+                child: MyQRCode(data: "this a sample data, that should be encrypted.",) // TODO: Encrypt data that the qr scanner will display/read
+              ),
             ],
           ),
         ),
