@@ -35,7 +35,7 @@ class UserDetailsModel {
     this.location = LocationModel( data["location"] ?? {} );
     if(data['registeredDate'] is DateTime){
       this.registeredDate = data['registeredDate'];
-    } else if((data['dateApproved'] as Timestamp) != null){
+    } else if((data['registeredDate'] as Timestamp) != null){
       this.registeredDate = (data['registeredDate'] as Timestamp).toDate();
     }
   }
