@@ -4,6 +4,7 @@ import 'package:queuing_system/SubPages/EditProfile.dart';
 import 'package:queuing_system/Variables/color.dart';
 import 'package:queuing_system/Variables/size.dart';
 import 'package:queuing_system/Widgets/ProfileDetails.dart';
+import 'package:queuing_system/Widgets/TextField.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Container(height: PhoneSize(context).height / 1.25),
+                    Container(height: PhoneSize(context).height / 1.0),
                     Positioned(
                       top: 80,
                       left: 0,
@@ -54,39 +55,84 @@ class _ProfilePageState extends State<ProfilePage> {
                                 visible: !editpro,
                                 child: Column(
                                   children: [
-                                    SizedBox(height: 30),
+                                    SizedBox(height: 60),
                                     EditProfile(
-                                      text: 'Full Name',
-                                      initialValue: 'John Doe Mayers',
-                                      icon: Icon(CustomIcons.profile),
-                                    ),
-                                    SizedBox(height: 10),
-                                    EditProfile(
+                                      icon: Icon(Icons.mail),
                                       text: 'Email',
                                       initialValue: 'bautistaivan_26@yahoo.com',
-                                      icon: Icon(Icons.mail),
+                                    ),
+                                    EditProfile(                                      
+                                      icon: Icon(Icons.lock),
+                                      text: 'Password',
+                                      initialValue: 'asdsadas',
+                                    ),
+                                    EditProfile(                                      
+                                      icon: Icon(Icons.lock),
+                                      text: 'Confirm Password',
+                                      initialValue: 'asdsadas',
+                                    ),
+                                    SizedBox(height: 20,),
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          child: EditProfile(
+                                            text: 'First Name',
+                                            initialValue: 'John Doe',
+                                            icon: Icon(CustomIcons.profile),
+                                          ),
+                                        ),
+                                        Flexible(
+                                          child: EditProfile(
+                                            text: 'Last Name',
+                                            initialValue: 'Mayers',
+                                            icon: null,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(height: 10),
-                                    EditProfile(
-                                      text: 'Contact',
-                                      initialValue: '639-323-265-144',
-                                      icon: Icon(Icons.contact_phone),
-                                    ),
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          flex: 2,
+                                          child: EditProfile(
+                                            text: 'Contact Number',
+                                            initialValue: '639-323-265-144',
+                                            icon: Icon(Icons.contact_phone),
+                                          ),
+                                        ),
+                                        Flexible(
+                                          child: EditProfile(
+                                            text: 'Age',
+                                            initialValue: '22',
+                                            icon: Icon(Icons.cake),
+                                          ),
+                                        ),
+                                      ],
+                                    ),                                   
+                                    SizedBox(height: 10),
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          
+                                          child: EditProfile(
+                                            text: 'State',
+                                            initialValue: 'Cabuyao',
+                                            icon: Icon(Icons.location_on),
+                                          ),
+                                        ),
+                                        Flexible(
+                                          child: EditProfile(
+                                            text: 'Province',
+                                            initialValue: 'Laguna',
+                                            icon: null,
+                                          ),
+                                        ),
+                                      ],
+                                    ),                                           
                                     SizedBox(height: 10),
                                     EditProfile(
-                                      text: 'Age',
-                                      initialValue: '22 Years Old',
-                                      icon: Icon(Icons.cake),
-                                    ),
-                                    SizedBox(height: 10),
-                                    EditProfile(
-                                      text: 'City Address',
-                                      initialValue: 'Calamba, City Laguna',
-                                      icon: Icon(Icons.location_on),
-                                    ),
-                                    SizedBox(height: 10),
-                                    EditProfile(
-                                      text: 'Street Address',
+                                      text: 'Complete Address',
                                       initialValue:
                                           '# 168 Purok 1, Barangay kabuto',
                                       icon: Icon(Icons.home),
@@ -234,6 +280,7 @@ class EditProfile extends StatelessWidget {
   final String text;
   final String initialValue;
   final Icon icon;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -246,13 +293,21 @@ class EditProfile extends StatelessWidget {
             child: Text('$text'),
           ),
           Container(
-            height: 35,
-            child: TextFormField(
-              initialValue: '$initialValue',
-              decoration: new InputDecoration(
-                  prefixIcon: icon,
-                  labelStyle: new TextStyle(color: const Color(0xFF424242))),
+            height: 40,
+            child: MyTextField(
+              initial: initialValue,
+              icons: icon,
+              controller: null,
+              hintText: "$text",
+              keyboardType: null,
+              inputFormatter: [],
             ),
+            // child: TextFormField(
+            //   initialValue: '$initialValue',
+            //   decoration: new InputDecoration(
+            //       prefixIcon: icon,
+            //       labelStyle: new TextStyle(color: const Color(0xFF424242))),
+            // ),
           ),
         ],
       ),
