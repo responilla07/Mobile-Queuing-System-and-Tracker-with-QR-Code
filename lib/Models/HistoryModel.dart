@@ -7,13 +7,15 @@ class HistoryModel {
     queuerID,
     scannerId,
     status,
-    storeId;
+    storeId,
+    id;
 
   int position;
   DateTime date;
 
-  HistoryModel(int position ,Map<dynamic, dynamic> data ) {
-    this.position = position ?? "";
+  HistoryModel( String id, Map<dynamic, dynamic> data ) {
+    this.id = id ?? "";
+    this.position = data["position"] ?? 0;
     this.number = data["number"] ?? "";
     this.qrID = data["qrID"] ?? "";
     this.queuerID = data["queuerID"] ?? "";
