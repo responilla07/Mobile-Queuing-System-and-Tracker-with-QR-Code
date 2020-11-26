@@ -16,8 +16,10 @@ dependencies:
   # qr_code_scanner: ^0.0.13
   cloud_firestore: ^0.14.3
   firebase_core : ^0.5.0
-  toast: ^0.1.5
   firebase_storage: ^5.0.1
+  firebase_auth:
+  firebase_messaging:
+  toast: ^0.1.5
   url_launcher:
   intl: ^0.16.1
   image_picker: ^0.6.7+14
