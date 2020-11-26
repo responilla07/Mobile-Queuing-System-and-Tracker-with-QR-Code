@@ -20,7 +20,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
         setState(() {});
       }
     });
-    pageTitle.value = "QR Code";
+    //pageTitle.value = "QR Code";
     root.tabController = TabController(length: 3, vsync: this, initialIndex: 1);
     super.initState();
   }
@@ -55,7 +55,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                 Expanded(
                   child: TabBarView(
                     physics: NeverScrollableScrollPhysics(),
-                    children: pagesForUser,
+                    children: userType == "Scanner" ? pagesForScanner :pagesForUser,
                     controller: root.tabController,
                   ),
                 ),
