@@ -2,7 +2,16 @@ import 'package:queuing_system/Variables/global.dart';
 
 class BottomNavigationClass {
   onTapTabBar(index) {
-    if ("User" == "User") {
+    if (userType == "Scanner") {
+      if (index == 0) {
+        pageTitle.value = "Create User";
+      } else if (index == 1) {
+        pageTitle.value = "Search & Scan";
+      } else {
+        pageTitle.value = "Profile";
+      }
+    } 
+    else {
       if (index == 0) {
         pageTitle.value = "History";
       } else if (index == 1) {
@@ -10,7 +19,6 @@ class BottomNavigationClass {
       } else {
         pageTitle.value = "Profile";
       }
-    } else {
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:queuing_system/Pages/MainPage.dart';
 import 'package:queuing_system/Widgets/CustomRaisedButton.dart';
 import 'package:queuing_system/Widgets/SubPagesAppBar.dart';
@@ -178,8 +179,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       child: CustomRaisedButton(
                         title: "REGISTER",
                         onTap: (){
-                          Navigator.pop(context);
-                          Navigator.pushReplacement(context, SlideRightRoute(page: MainPage()));
+                          // Navigator.pop(context);
+                          // Navigator.pushReplacement(context, SlideRightRoute(page: MainPage()));
                         },
                       ),
                     ),
