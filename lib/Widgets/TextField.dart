@@ -56,7 +56,7 @@ class _MyTextFieldState extends State<MyTextField> {
               filled: true,
               fillColor: Color(0xFFEFEFEF),
               hintText: widget.hintText,
-              contentPadding: EdgeInsets.fromLTRB(10, 10, 40, 10),
+              contentPadding: EdgeInsets.fromLTRB(10, 10, widget.hintText == "Password" || widget.hintText == "Confirm Password" ? 40 : 10, 10),
              border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0),
                 borderSide: BorderSide(color: Color(0xFFEFEFEF))

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:queuing_system/Models/UserModel.dart';
 import 'package:queuing_system/Widgets/QueueCard.dart';
 import 'package:queuing_system/Widgets/MyQRCode.dart';
 
 class QRCodePage extends StatefulWidget {
+  const QRCodePage({
+    this.userDetailsModel
+  });
+  final UserDetailsModel userDetailsModel;
   @override
   _QRCodePageState createState() => _QRCodePageState();
 }

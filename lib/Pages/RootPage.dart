@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Methods/Style.dart';
+import 'package:queuing_system/Pages/MainPage.dart';
 import 'package:queuing_system/SubPages/Login.dart';
 import 'package:queuing_system/Variables/color.dart';
+import 'package:queuing_system/Variables/global.dart';
 import 'package:queuing_system/transitions/slide_route.dart';
 
 class RootPage extends StatefulWidget {
@@ -13,7 +15,13 @@ class _RootPageState extends State<RootPage> {
 
   navigateToDesignatedPage() async {
     await Future.delayed(const Duration(milliseconds: 5000), null);
-    await Navigator.pushReplacement(context, SlideLeftRoute(page: LoginPage()));
+    loggedUser = auth.currentUser;
+
+    if (loggedUser == null) {
+      await Navigator.pushReplacement(context, SlideLeftRoute(page: LoginPage()));
+    } else {
+      await Navigator.pushReplacement(context, SlideLeftRoute(page: MainPage()));
+    }
   }
 
   @override
@@ -64,7 +72,7 @@ class _RootPageState extends State<RootPage> {
                   padding: EdgeInsets.symmetric(vertical: 32.0),
                   child: Column(
                     children: <Widget>[ //Comment nalang para may loader
-                      CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(primaryColor))
+                      // CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(primaryColor))
                     ],
                   ),
                 ),

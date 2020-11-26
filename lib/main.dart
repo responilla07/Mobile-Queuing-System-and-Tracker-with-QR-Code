@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:queuing_system/Variables/color.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:queuing_system/Variables/global.dart';
 import 'Pages/RootPage.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
+    myUserDetails.addListener(() {setState(() {});});
     initializeFirebase();
     super.initState();
   }
