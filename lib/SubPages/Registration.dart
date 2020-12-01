@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:queuing_system/Class/RegistrationClass.dart';
 import 'package:queuing_system/Pages/MainPage.dart';
 import 'package:queuing_system/Widgets/CustomRaisedButton.dart';
 import 'package:queuing_system/Widgets/SubPagesAppBar.dart';
 import 'package:queuing_system/Widgets/TextField.dart';
 import 'package:queuing_system/transitions/slide_route.dart';
+import 'package:toast/toast.dart';
 
 class RegistrationPage extends StatefulWidget {
   @override
@@ -12,6 +13,8 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  RegistrationClass registration = RegistrationClass();
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -56,19 +59,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               MyTextField(
-                                controller: null,
+                                controller: registration.email,
                                 hintText: "Email",
                                 keyboardType: null,
                                 inputFormatter: [],
                               ),
                               MyTextField(
-                                controller: null,
+                                controller: registration.password,
                                 hintText: "Password",
                                 keyboardType: null,
                                 inputFormatter: [],
                               ),
                               MyTextField(
-                                controller: null,
+                                controller: registration.confirmPassword,
                                 hintText: "Confirm Password",
                                 keyboardType: null,
                                 inputFormatter: [],
@@ -102,7 +105,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 children: [
                                   Expanded(
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.firstName,
                                       hintText: "First name",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -111,7 +114,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   SizedBox(width: 15,),
                                   Expanded(
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.lastName,
                                       hintText: "Last name",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -123,7 +126,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 children: [
                                   Expanded(
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.contactNumber,
                                       hintText: "Contact Number",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -133,7 +136,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   Container(
                                     width: 100,
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.age,
                                       hintText: "Age",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -145,7 +148,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 children: [
                                   Expanded(
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.state,
                                       hintText: "State",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -154,7 +157,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   SizedBox(width: 15,),
                                   Expanded(
                                     child: MyTextField(
-                                      controller: null,
+                                      controller: registration.province,
                                       hintText: "Province",
                                       keyboardType: null,
                                       inputFormatter: [],
@@ -163,7 +166,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 ],
                               ),
                               MyTextField(
-                                controller: null,
+                                controller: registration.completeAddress,
                                 hintText: "Complete address",
                                 keyboardType: null,
                                 inputFormatter: [],
@@ -179,8 +182,17 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       child: CustomRaisedButton(
                         title: "REGISTER",
                         onTap: (){
-                          // Navigator.pop(context);
-                          // Navigator.pushReplacement(context, SlideRightRoute(page: MainPage()));
+                          if (registration.validate("fields")) {
+                            registration.processRegistration(context).then((isRegistered){
+                              if (isRegistered) {
+                                print("User created........");
+                                Navigator.pop(context);
+                                Navigator.pushReplacement(context, SlideRightRoute(page: MainPage()));
+                              }
+                            });
+                          } else {
+                            Toast.show(registration.validate("message"), context, duration: 4, gravity: Toast.BOTTOM);
+                          }
                         },
                       ),
                     ),

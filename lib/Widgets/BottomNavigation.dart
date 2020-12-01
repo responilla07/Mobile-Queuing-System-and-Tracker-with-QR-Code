@@ -29,7 +29,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         labelColor: Colors.white,
         // unselectedLabelColor: Color(0xff9d9d9d),
         unselectedLabelColor: Colors.white,
-        tabs: userType == "Scanner" ? tabsForScanner : tabsForUser,
+        tabs: userType == "scanner" ? tabsForScanner : tabsForUser,
       )
     );
   }

@@ -50,10 +50,10 @@ class UserDetailsModel {
       "messagingToken" : this.messagingToken,
       "secretLoginHash" : this.secretLoginHash,
       "storeAppointed" : this.storeAppointed,
-      "userType" : this.userType,
+      "userType" : "normal",
       "name" : this.name.setName(),
       "location" : this.location.setLocation(),
-      "registeredDate" : this.registeredDate,
+      "registeredDate" : FieldValue.serverTimestamp(),
     };
   }
 }

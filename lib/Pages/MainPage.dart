@@ -55,7 +55,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                 Expanded(
                   child: TabBarView(
                     physics: NeverScrollableScrollPhysics(),
-                    children: userType == "Scanner" ? pagesForScanner :pagesForUser,
+                    children: userType == "scanner" ? pagesForScanner : pagesForUser,
                     controller: root.tabController,
                   ),
                 ),
